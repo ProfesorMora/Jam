@@ -8,6 +8,7 @@ using System.Collections;
 public class DialogManager : MonoBehaviour
 {
     public GameObject dialogBox;
+    public GameObject backImage;
     public TextMeshProUGUI dialogText;
 
     public FileReader fileReader;
@@ -15,7 +16,7 @@ public class DialogManager : MonoBehaviour
     public int currentScene;
     public float textSpeed;
     public List<string> filePaths;
-    public bool writing = false, finishedWriting = false;
+    public bool writing = false, finishedWriting = false, deactivated = false;
 
     private void Start()
     {
@@ -71,6 +72,10 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(textSpeed);
         }
         finishedWritingCurrentEntry();
+        if(input == "")
+        {
+            deactivate();
+        }
     }
 
     private void finishedWritingCurrentEntry()
@@ -78,5 +83,12 @@ public class DialogManager : MonoBehaviour
         writing = false;
         finishedWriting = true;
         currentEntryNumber++;
+    }
+
+    public void deactivate()
+    {
+        dialogText.enabled = false;
+        backImage.SetActive(false);
+        deactivated = true;
     }
 }

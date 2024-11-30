@@ -1,0 +1,2 @@
+Mi nombre es Arrendabot.
+El precio de este inmueble es de 400€, pero puede negociarse según como vaya esta visita. Ahora por favor rellene el formulario.

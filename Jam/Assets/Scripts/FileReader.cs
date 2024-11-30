@@ -45,7 +45,7 @@ public class FileReader : MonoBehaviour
                 Debug.Log("read line: "+inp_ln);
             }else{
                 endedCurrentFile = true;
-                //inp_ln = "";
+                inp_ln = "";
             }
         }
 
