@@ -1,20 +1,20 @@
 using UnityEngine;
 using System.IO;
-using System.Collections;
+using UnityEditor.ProjectWindowCallback;
 
 public class FileReader : MonoBehaviour
 {
-    public string file_path;
+    //public string file_path;
     public DialogManager dialogManager;
 
-    public int entryNumber;
+    //public int entryNumber;
 
-    public float textSpeed;
+    bool endedCurrentFile = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        entryNumber = 1;
+
     }
 
     // Update is called once per frame
@@ -23,37 +23,33 @@ public class FileReader : MonoBehaviour
         
     }
 
-    // Lee la siguiente línea de texto del .txt miembro
-    [ContextMenu("readTextFile")]
-    public void readTextFile()
+    // Lee la línea lineNumber del archivo en file_path
+    public string readTextFile(string file_path, int entryNumber)
     {
-        StreamReader inp_stm = new StreamReader(file_path);
-        string inp_ln;
-        for(int i = 1; i < entryNumber; i++)
+        if (!File.Exists(file_path)) 
         {
-            inp_ln = inp_stm.ReadLine();
+            Debug.LogError("Archivo no encontrado: " + file_path);
+            return "";
         }
 
-        if (!inp_stm.EndOfStream)
+        if(endedCurrentFile) return "";
+        
+        StreamReader inp_stm = new StreamReader(file_path);
+        string inp_ln = "";
+        for(int i = 0; i < entryNumber; i++)
         {
-            inp_ln = inp_stm.ReadLine();
-            StartCoroutine(writeToDialog(inp_ln));
+            if (!inp_stm.EndOfStream)
+            {
+                inp_ln = inp_stm.ReadLine();
+            }else{
+                endedCurrentFile = true;
+                inp_ln = "";
+            }
         }
 
         inp_stm.Close();
-
-        entryNumber++;
+        return inp_ln;
     }
 
-    // Escribe la cadena de texto en el diálogo caracter a caracter
-    IEnumerator writeToDialog(string input)
-    {
-        string txt = "";
-        foreach(char c in input)
-        {
-            txt += c;
-            dialogManager.showDialog(txt);
-            yield return new WaitForSeconds(textSpeed);
-        }
-    }
+    
 }
