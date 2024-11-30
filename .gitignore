@@ -1,4 +1,36 @@
-/Jam/Library/
-/Jam/.vscode/
-/Jam/Temp/
-/Jam/Logs/
+# =============== #
+# Unity generated #
+# =============== #
+Jam/Temp/ 
+Jam/Obj/
+Jam/UnityGenerated/
+Jam/Library/
+Jam/Assets/AssetStoreTools*
+Jam/Logs/
+Jam/.vscode/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+Jam/ExportedObj/
+Jam/*.svd
+Jam/*.userprefs
+Jam/*.csproj
+Jam/*.pidb
+Jam/*.suo
+Jam/*.sln
+Jam/*.user
+Jam/*.unityproj
+Jam/*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+Jam/.DS_Store
+Jam/.DS_Store?
+Jam/._*
+Jam/.Spotlight-V100
+Jam/.Trashes
+Jam/Icon?
+Jam/ehthumbs.db
+Jam/Thumbs.db/
