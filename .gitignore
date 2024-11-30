@@ -33,3 +33,6 @@ Jam/.Trashes
 Jam/Icon?
 Jam/ehthumbs.db
 Jam/Thumbs.db/
+
+# El assembly
+Jam/Assembly-CSharp.csproj
