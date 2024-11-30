@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class ClickableObject : MonoBehaviour
 {
-	public SpriteRenderer Sprite;
 	public GameObject text;
 	public GameObject YesButton;
 	public GameObject NoButton;
@@ -27,10 +26,10 @@ public class ClickableObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (color == false)
-			Sprite.color = Color.red;
-		else
-			Sprite.color = Color.white;
+	//	if (color == false)
+		//	Sprite.color = Color.red;
+		//else
+			//Sprite.color = Color.white;
 	    Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
 		CheckColor(hit);
