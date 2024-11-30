@@ -856,10 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb41a7c979379343adc11c4a960208b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  file_path: C:\Users\AlejandroLuisGarcia\Jam\Prueba\Jam\Assets\hola.txt
   dialogManager: {fileID: 1663554341}
-  entryNumber: 8
-  textSpeed: 0.03
 --- !u!4 &1643718935
 Transform:
   m_ObjectHideFlags: 0
@@ -906,6 +903,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 1460990558}
   dialogText: {fileID: 2098853532}
+  fileReader: {fileID: 1643718934}
+  currentEntryNumber: 0
+  currentScene: 0
+  textSpeed: 0.03
+  filePaths:
+  - Assets/txtFiles/hola.txt
 --- !u!4 &1663554342
 Transform:
   m_ObjectHideFlags: 0
@@ -1004,9 +1007,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1643718934}
-        m_TargetAssemblyTypeName: FileReader, Assembly-CSharp
-        m_MethodName: readTextFile
+      - m_Target: {fileID: 1663554341}
+        m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
+        m_MethodName: nextEntry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
