@@ -15,14 +15,14 @@ public class DialogManager : MonoBehaviour
     public int currentScene;
     public float textSpeed;
     public List<string> filePaths;
-    bool writing, finishedWriting;
+    public bool writing = false, finishedWriting = false;
 
     private void Start()
     {
         currentScene = 0;
         currentEntryNumber = 1;
         writing = false;
-        finishedWriting = true;
+        finishedWriting = false;
     }
 
     
@@ -40,10 +40,13 @@ public class DialogManager : MonoBehaviour
     public void nextEntry()
     {
         string file = System.IO.Path.GetFullPath(filePaths[currentScene]);
+        Debug.Log("Reading text from file: " + file);
         string text = getTextFromFile(file, currentEntryNumber);
+        Debug.Log("Got text: " + text);
         IEnumerator writeToDialogRoutine  = writeToDialog(text);
         if(!writing)
         {
+            Debug.Log("Will start writing...");
             StartCoroutine(writeToDialogRoutine);
             finishedWriting = false;
             writing = true;
@@ -60,6 +63,7 @@ public class DialogManager : MonoBehaviour
     {
         writing = true;
         string txt = "";
+        Debug.Log("Input is " + input);
         foreach(char c in input)
         {
             txt += c;

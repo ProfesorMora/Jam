@@ -31,19 +31,21 @@ public class FileReader : MonoBehaviour
             Debug.LogError("Archivo no encontrado: " + file_path);
             return "";
         }
-
+        Debug.Log("Ended Current File: " + endedCurrentFile);
         if(endedCurrentFile) return "";
         
         StreamReader inp_stm = new StreamReader(file_path);
         string inp_ln = "";
         for(int i = 0; i < entryNumber; i++)
         {
+            Debug.Log("loop:"+i);
             if (!inp_stm.EndOfStream)
             {
                 inp_ln = inp_stm.ReadLine();
+                Debug.Log("read line: "+inp_ln);
             }else{
                 endedCurrentFile = true;
-                inp_ln = "";
+                //inp_ln = "";
             }
         }
 
