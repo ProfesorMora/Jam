@@ -118,4 +118,18 @@ public class DialogManager : MonoBehaviour
         currentScene ++;
         currentEntryNumber = 1;
     }
+
+    public void LoadTextWithSceneNumber(int scene)
+    {
+        reactivateWithNoScene();
+        currentScene = scene+1;
+        nextEntry();
+    }
+    public void reactivateWithNoScene()
+    {
+        dialogText.enabled = true;
+        backImage.SetActive(true);
+        deactivated = false;
+        currentEntryNumber = 1;
+    }
 }

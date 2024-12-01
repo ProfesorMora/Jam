@@ -11,6 +11,8 @@ public class ClickableObjectMinus : MonoBehaviour
 	public GameObject NoButton;
 	public GameObject Signal;
 
+	public DialogManager dialogManager;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

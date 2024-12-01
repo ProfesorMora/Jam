@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class formScript : MonoBehaviour
 {
@@ -137,6 +138,6 @@ public class formScript : MonoBehaviour
     void changeScene()
     {
         Debug.Log("Will change scene");
-        //SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
     }
 }
