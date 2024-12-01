@@ -26,6 +26,7 @@ public class FileReader : MonoBehaviour
     // Lee la línea lineNumber del archivo en file_path
     public string readTextFile(string file_path, int entryNumber)
     {
+        endedCurrentFile = false;
         if (!File.Exists(file_path)) 
         {
             Debug.LogError("Archivo no encontrado: " + file_path);

@@ -13,7 +13,7 @@ public class formScript : MonoBehaviour
     public ToggleGroup toggleGroupWork; //
     public Canvas priceCanvas;
     public TextMeshProUGUI priceText;
-    bool formSubmitted;
+    bool formSubmitted, finishedTalking;
 
     List<bool> listOfToggleBools;
     List<int> listOfToggleValues;
@@ -84,9 +84,14 @@ public class formScript : MonoBehaviour
             priceCanvas.enabled = true;
             formSubmitted = true;
         }else{
-            priceCanvas.enabled = false;
-            submitButton.SetActive(false);
-            changeScene();
+            if(finishedTalking) changeScene();
+            else{
+                priceCanvas.enabled = false;
+                dialogManager.reactivate();
+                dialogManager.nextEntry();
+                //submitButton.SetActive(false);
+                finishedTalking = true;
+            }
         }
     }
 
