@@ -67,7 +67,9 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ScriptIntro.cs" />
     <Compile Include="Assets\Scripts\DialogManager.cs" />
+    <Compile Include="Assets\Menu.cs" />
     <Compile Include="Assets\Plus.cs" />
+    <Compile Include="Assets\MusicIntroScript.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\ClickableObjectMinus.cs" />
     <Compile Include="Assets\Scripts\NextScript.cs" />
