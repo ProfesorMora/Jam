@@ -27,7 +27,10 @@ public class RoomManager : MonoBehaviour
         if (DialogManager.deactivated)
         {
             if(finishing){
-                SceneManager.LoadScene(3);
+                if(GlobalVariables.price <= 4000)
+                    SceneManager.LoadScene(3);
+                else
+                    SceneManager.LoadScene(4);
             }else{
                 Debug.Log("Will submit form");
                 int newPrice = GlobalVariables.price;

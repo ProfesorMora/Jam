@@ -65,11 +65,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.28f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\funcionarScript.cs" />
     <Compile Include="Assets\Scripts\ScriptIntro.cs" />
     <Compile Include="Assets\Scripts\DialogManager.cs" />
     <Compile Include="Assets\Menu.cs" />
     <Compile Include="Assets\Plus.cs" />
     <Compile Include="Assets\MusicIntroScript.cs" />
+    <Compile Include="Assets\endingScript.cs" />
     <Compile Include="Assets\Scripts\Manager.cs" />
     <Compile Include="Assets\Scripts\ClickableObjectMinus.cs" />
     <Compile Include="Assets\Scripts\NextScript.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="Assets\Scripts\ClickableObjectPlus.cs" />
     <Compile Include="Assets\Signal.cs" />
     <Compile Include="Assets\ima.cs" />
+    <Compile Include="Assets\canvasScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

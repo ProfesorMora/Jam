@@ -14,7 +14,7 @@ public class endingScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        subtext.text = "";
+       /* subtext.text = "";
         title.text = "";
         goddEndingImage.gameObject.SetActive(false);
         badEndingImage.gameObject.SetActive(false);
@@ -34,12 +34,12 @@ public class endingScript : MonoBehaviour
             badEndingImage.gameObject.SetActive(true);
             goddEndingImage.gameObject.SetActive(false);
             Debug.Log("Here");
-        }
+        }*/
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {/*
         if(GlobalVariables.price >= 4000)
         {
             goodEnding = true;
@@ -54,5 +54,6 @@ public class endingScript : MonoBehaviour
             badEndingImage.gameObject.SetActive(true);
             goddEndingImage.gameObject.SetActive(false);
         }
+    }*/
     }
 }
