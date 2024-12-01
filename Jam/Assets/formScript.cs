@@ -11,6 +11,9 @@ public class formScript : MonoBehaviour
     public List<TMP_InputField> listOfInputs;
     public ToggleGroup toggleGroupPet; // Esto no lo pilla el formScript
     public ToggleGroup toggleGroupWork; //
+    public Canvas priceCanvas;
+    public TextMeshProUGUI priceText;
+    bool formSubmitted;
 
     List<bool> listOfToggleBools;
     List<int> listOfToggleValues;
@@ -23,15 +26,20 @@ public class formScript : MonoBehaviour
     {
         formPanel.SetActive(false);
         submitButton.SetActive(false);
+        priceCanvas.enabled = false;
         listOfToggleBools = new List<bool>{false, false, false};
         listOfToggleValues = new List<int>{0,0,0};
+        formSubmitted = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(dialogManager.deactivated) formPanel.SetActive(true);
-        if(isFormFilled()) submitButton.SetActive(true);
+        if(!formSubmitted)
+        {
+            if(dialogManager.deactivated) formPanel.SetActive(true);
+            if(isFormFilled()) submitButton.SetActive(true);
+        }
     }
 
     public bool isFormFilled()
@@ -68,12 +76,21 @@ public class formScript : MonoBehaviour
 
     public void submitForm()
     {
-        Debug.Log("Will submit form");
-        calculatePrice();
-        changeScene();
+        if(!formSubmitted)
+        {
+            Debug.Log("Will submit form");
+            formPanel.SetActive(false);
+            priceText.text = calculatePrice().ToString() + "€";
+            priceCanvas.enabled = true;
+            formSubmitted = true;
+        }else{
+            priceCanvas.enabled = false;
+            submitButton.SetActive(false);
+            changeScene();
+        }
     }
 
-    void calculatePrice()
+    int calculatePrice()
     {
         int currentPrice = 0;
         foreach( Toggle toggle in toggleGroupPet.ActiveToggles() )
@@ -92,6 +109,7 @@ public class formScript : MonoBehaviour
 
         Debug.Log("Current Price: " + currentPrice);
 
+        return currentPrice;
     }
 
     void changeScene()
