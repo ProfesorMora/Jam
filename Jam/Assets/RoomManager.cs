@@ -1,13 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class RoomManager : MonoBehaviour
 {
     public DialogManager DialogManager;
+    bool finishing = false;
+    public Canvas priceCanvas;
+    public TextMeshProUGUI priceText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //DialogManager.deactivate();
+        priceCanvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -20,6 +25,19 @@ public class RoomManager : MonoBehaviour
     {
         Debug.Log("Will load next Scene");
         if (DialogManager.deactivated)
-            SceneManager.LoadScene(3);
+        {
+            if(finishing){
+                SceneManager.LoadScene(3);
+            }else{
+                Debug.Log("Will submit form");
+                int newPrice = GlobalVariables.price;
+                priceText.text = newPrice.ToString() + "€";
+                priceCanvas.enabled = true;
+                Debug.Log("global price" + GlobalVariables.price.ToString());
+                finishing = true;
+                //dialogManager.reactivate();
+                //dialogManager.nextEntry();
+            }
+        }
     }
 }
