@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 70c36dbc732d8224294bb3125a47ed4e
+guid: 3479c3ce9bc2a014389f72a4443a185d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5820534441558986570
-    second: 1920x1080-px-room-1197273-wallhere.com_0
+      213: 2463902383764609817
+    second: hoyo_active_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1920x1080-px-room-1197273-wallhere.com_0
+      name: hoyo_active_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 92
+        height: 195
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4fcc007c31b6c050800000000000000
-      internalID: 5820534441558986570
+      spriteID: 91b1789e92a813220800000000000000
+      internalID: 2463902383764609817
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      1920x1080-px-room-1197273-wallhere.com_0: 5820534441558986570
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
