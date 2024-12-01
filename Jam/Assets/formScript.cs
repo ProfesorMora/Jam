@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 public class formScript : MonoBehaviour
 {
@@ -79,10 +80,13 @@ public class formScript : MonoBehaviour
         if(!formSubmitted)
         {
             Debug.Log("Will submit form");
+            int newPrice = calculatePrice();
             formPanel.SetActive(false);
-            priceText.text = calculatePrice().ToString() + "€";
+            GlobalVariables.price = newPrice;
+            priceText.text = newPrice.ToString() + "€";
             priceCanvas.enabled = true;
             formSubmitted = true;
+            Debug.Log("global price" + GlobalVariables.price.ToString());
         }else{
             if(finishedTalking) changeScene();
             else{
@@ -97,17 +101,30 @@ public class formScript : MonoBehaviour
 
     int calculatePrice()
     {
-        int currentPrice = 0;
-        foreach( Toggle toggle in toggleGroupPet.ActiveToggles() )
-        {
-            if(toggle.name == "togGatos") currentPrice -= 300;
-            if(toggle.name == "togPerros") currentPrice += 300;
-        }
+        int currentPrice = GlobalVariables.price;
 
-        foreach( Toggle toggle in toggleGroupWork.ActiveToggles() )
+        var togglePet = toggleGroupPet.ActiveToggles().First();
+        Debug.Log(togglePet.name);
+        if(togglePet.name == "togGatos"){
+            Debug.Log("Gatos");
+            currentPrice -= 300;
+        }
+        if(togglePet.name == "togPerros"){
+            Debug.Log("Perros");
+            currentPrice += 300;
+        }
+        
+        var toggleWork = toggleGroupWork.ActiveToggles().First();
+        Debug.Log(toggleWork.name);
+        if (toggleWork.name == "togIndefinido")
         {
-            if(toggle.name == "togIndefinido") currentPrice -= 300;
-            if(toggle.name == "togTemporal") currentPrice += 300;
+            Debug.Log("Indefinido");
+            currentPrice -= 300;
+        }
+        if (toggleWork.name == "togTemporal")
+        {
+            Debug.Log("Temporal");
+            currentPrice += 300;
         }
 
         currentPrice -= 150;
