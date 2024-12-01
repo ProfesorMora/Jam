@@ -194,8 +194,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Hola
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a3048a1add12d984c9794e166ae8a859, type: 2}
+  m_sharedMaterial: {fileID: 4324535852989509328, guid: a3048a1add12d984c9794e166ae8a859, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 8
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -585,6 +585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBox: {fileID: 1945345221}
+  backImage: {fileID: 0}
   dialogText: {fileID: 216147861}
   fileReader: {fileID: 1615410187}
   currentEntryNumber: 1
@@ -594,6 +595,7 @@ MonoBehaviour:
   - Assets\txtFiles\intro.txt
   writing: 0
   finishedWriting: 0
+  deactivated: 0
 --- !u!4 &1862954165
 Transform:
   m_ObjectHideFlags: 0
