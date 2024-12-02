@@ -1,10 +1,6 @@
-using System;
-using System.Drawing;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ScriptIntro : MonoBehaviour
 {
@@ -34,7 +30,7 @@ public class ScriptIntro : MonoBehaviour
             if (fadeTime > 0)
             {
                 alphaValue -= fadeAwayPerSecond * Time.deltaTime;
-                textComponent.color = new UnityEngine.Color(textComponent.color.r, textComponent.color.g, textComponent.color.b, alphaValue);
+                textComponent.color = new Color(textComponent.color.r, textComponent.color.g, textComponent.color.b, alphaValue);
                 fadeTime -= Time.deltaTime;
             }
         }

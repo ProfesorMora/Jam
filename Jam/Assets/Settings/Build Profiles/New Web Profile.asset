@@ -22,8 +22,6 @@ MonoBehaviour:
   m_Scenes:
   - m_enabled: 1
     m_path: Assets/Scenes/Intro Timeline.unity
-  - m_enabled: 0
-    m_path: Assets/Scenes/conversation.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Formulario.unity
   - m_enabled: 1
@@ -176,7 +174,9 @@ MonoBehaviour:
     - line: '|   visionOSBundleVersion: 1.0'
     - line: '|   tvOSBundleVersion: 1.0'
     - line: '|   bundleVersion: 1.0'
-    - line: '|   preloadedAssets: []'
+    - line: '|   preloadedAssets:'
+    - line: '|   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100,
+        type: 3}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -718,7 +718,13 @@ MonoBehaviour:
     - line: '|   XboxOneOverrideIdentityName: '
     - line: '|   XboxOneOverrideIdentityPublisher: '
     - line: '|   vrEditorSettings: {}'
-    - line: '|   cloudServicesEnabled: {}'
+    - line: '|   cloudServicesEnabled:'
+    - line: '|     Build: 0'
+    - line: '|     Game Performance: 0'
+    - line: '|     Legacy Analytics: 0'
+    - line: '|     Purchasing: 0'
+    - line: '|     UDP: 0'
+    - line: '|     Unity Ads: 0'
     - line: '|   luminIcon:'
     - line: '|     m_Name: '
     - line: '|     m_ModelFolderPath: '

@@ -1,47 +1,62 @@
-using System;
-using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public class ClickableObjectPlus : MonoBehaviour
 {
-	public GameObject text;
-	public GameObject YesButton;
-	public GameObject NoButton;
-	public GameObject Signal;
+    public GameObject text;
+    public GameObject YesButton;
+    public GameObject NoButton;
+    public GameObject Signal;
 
-	public DialogManager dialogManager;
+    public DialogManager dialogManager;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool isDestroyed = false; // Nueva variable para simular destrucción
+
     void Start()
     {
-		Signal.SetActive(true);
-		DisableText();
+        Signal.SetActive(true);
+        DisableText();
     }
 
-    // Update is called once per frame
-	public void DisableText()
-	{
-		text.SetActive(false);
-		YesButton.SetActive(false);
-		NoButton.SetActive(false);
-		Signal.SetActive(true);
-	}
-	public void YesClick()
-	{
-		Destroy(Signal);
-		Destroy(text);
-		Destroy(YesButton);
-		Destroy(NoButton);
-		GlobalVariables.price += 200;
-	}
+    public void DisableText()
+    {
+        if (isDestroyed) return; // No ejecutar si el objeto está "destruido"
 
-	public void EnableText()
-	{
-		text.SetActive(true);
-		YesButton.SetActive(true);
-		NoButton.SetActive(true);
-		Signal.SetActive(false);
-	}
+        text.SetActive(false);
+        YesButton.SetActive(false);
+        NoButton.SetActive(false);
+        Signal.SetActive(true);
+    }
+
+    public void YesClick()
+    {
+        if (isDestroyed) return; // No ejecutar si el objeto está "destruido"
+
+        // Simular destrucción con SetActive(false)
+        Signal.SetActive(false);
+        text.SetActive(false);
+        YesButton.SetActive(false);
+        NoButton.SetActive(false);
+
+        isDestroyed = true; // Marcar como "destruido"
+
+        GlobalVariables.price += 200;
+    }
+
+    public void EnableText()
+    {
+        if (isDestroyed) return; // No ejecutar si el objeto está "destruido"
+
+        text.SetActive(true);
+        YesButton.SetActive(true);
+        NoButton.SetActive(true);
+        Signal.SetActive(false);
+    }
+
+    public void ResetObject()
+    {
+        // Método para "revivir" el objeto si es necesario
+        isDestroyed = false;
+        Signal.SetActive(true);
+        DisableText();
+    }
 }
