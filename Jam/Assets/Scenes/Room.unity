@@ -2157,11 +2157,11 @@ MonoBehaviour:
   fontProta: {fileID: 11400000, guid: a3048a1add12d984c9794e166ae8a859, type: 2}
   fontRobot: {fileID: 11400000, guid: fd86b9d49de48c54f95f9d30183ba71a, type: 2}
   filePaths:
-  - Assets\txtFiles\Room\Prev.txt
-  - Assets\txtFiles\Room\Window.txt
-  - Assets\txtFiles\Room\WC.txt
-  - Assets\txtFiles\Room\Crack.txt
-  - Assets\txtFiles\Room\Te.txt
+  - Prev
+  - Window
+  - WC
+  - Crack
+  - Te
   writing: 0
   finishedWriting: 1
   deactivated: 0

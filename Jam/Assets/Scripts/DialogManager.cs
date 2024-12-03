@@ -37,14 +37,15 @@ public class DialogManager : MonoBehaviour
         dialogText.text = text; 
     }
 
-    private string getTextFromFile(string file_path, int entryNumber)
+    private string getTextFromFile(TextAsset file_path, int entryNumber)
     {
+        Debug.Log("entra");
         return fileReader.readTextFile(file_path,entryNumber);
     }
 
     public void nextEntry()
     {
-        string file = System.IO.Path.GetFullPath(filePaths[currentScene]);
+        TextAsset file = Resources.Load<TextAsset>(filePaths[currentScene]);
         Debug.Log("Reading text from file: " + file);
         string text = getTextFromFile(file, currentEntryNumber);
         Debug.Log("Got text: " + text);

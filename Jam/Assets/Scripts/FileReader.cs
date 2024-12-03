@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.IO;
+using System.Xml.Linq;
+using UnityEditor;
 
 public class FileReader : MonoBehaviour
 {
@@ -23,35 +25,34 @@ public class FileReader : MonoBehaviour
     }
 
     // Lee la línea lineNumber del archivo en file_path
-    public string readTextFile(string file_path, int entryNumber)
+    public string readTextFile(TextAsset file_path, int entryNumber)
     {
         endedCurrentFile = false;
-        if (!File.Exists(file_path)) 
+        if (!file_path) 
         {
-            Debug.LogError("Archivo no encontrado: " + file_path);
+            Debug.LogError("No localizamos la ruta");
             return "";
         }
         Debug.Log("Ended Current File: " + endedCurrentFile);
         if(endedCurrentFile) return "";
         
-        StreamReader inp_stm = new StreamReader(file_path);
         string inp_ln = "";
+        using (StringReader reader = new StringReader(file_path.text))
+        {
         for(int i = 0; i < entryNumber; i++)
         {
             Debug.Log("loop:"+i);
-            if (!inp_stm.EndOfStream)
+            string line = reader.ReadLine();
+            if (line != null)
             {
-                inp_ln = inp_stm.ReadLine();
+                inp_ln = line;
                 Debug.Log("read line: "+inp_ln);
             }else{
                 endedCurrentFile = true;
                 inp_ln = "";
             }
         }
-
-        inp_stm.Close();
+        }
         return inp_ln;
     }
-
-    
 }

@@ -2983,8 +2983,8 @@ MonoBehaviour:
   fontProta: {fileID: 11400000, guid: a3048a1add12d984c9794e166ae8a859, type: 2}
   fontRobot: {fileID: 11400000, guid: fd86b9d49de48c54f95f9d30183ba71a, type: 2}
   filePaths:
-  - Assets/txtFiles/formulario.txt
-  - Assets/txtFiles/formulario2.txt
+  - formulario
+  - formulario2
   writing: 0
   finishedWriting: 0
   deactivated: 0
